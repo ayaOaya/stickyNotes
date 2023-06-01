@@ -3,13 +3,6 @@ const appContainer = document.getElementById('app');
 
 const addBtn = appContainer.querySelector('.add-btn');
 
-
-
-
-
-
-
-
 getNote().forEach(note => {
     const noteElement = createNote(note.id, note.content);
     appContainer.insertBefore(noteElement, addBtn);
@@ -34,11 +27,6 @@ localStorage.setItem("stickynotes-notes", JSON.stringify(notes))
 }
 
 
-
-
-
-
-
 function createNote(id, content){
 const element = document.createElement('textarea');
 
@@ -61,9 +49,6 @@ return element;
 }
 
 
-
-
-
 function addNote(){
 const notes = getNote();
 const object = {
@@ -78,10 +63,7 @@ notes.push(object);
 saveNote(notes);
 }
 
-
-
 //FINISH THIS PART !! //
-
 
 function updateNote(id, newContent){
 const notes = getNote();
@@ -91,12 +73,6 @@ targetNote.content = newContent;
 saveNote(notes);
 
 }
-
-
-
-
-
-
 
 function deleteNote(id, element){
 const notes = getNote().filter(note => note.id != id);
